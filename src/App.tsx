@@ -164,7 +164,7 @@ export default function App() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
         {/* Daily View Tab */}
         {activeTab === 'daily' && (
           <div className="space-y-6">
@@ -197,7 +197,15 @@ export default function App() {
                 <p className="text-xs text-slate-400 mt-1">나이스(NEIS) 오픈 API 실시간 조회</p>
               </div>
             ) : meals.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                className={`grid gap-6 ${
+                  meals.length === 1
+                    ? 'grid-cols-1 max-w-2xl mx-auto'
+                    : meals.length === 2
+                    ? 'grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto'
+                    : 'grid-cols-1 md:grid-cols-2 xl:grid-cols-3'
+                }`}
+              >
                 {meals.map((meal) => (
                   <MealCard
                     key={`${meal.date}-${meal.mealCode}`}

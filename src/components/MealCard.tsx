@@ -134,13 +134,13 @@ export const MealCard: React.FC<MealCardProps> = ({
               return (
                 <li
                   key={idx}
-                  className={`p-2.5 rounded-xl border transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2 ${
+                  className={`p-3 rounded-xl border transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 ${
                     containsMyAllergy
                       ? 'bg-rose-50/80 border-rose-200 text-rose-950 font-medium'
                       : 'bg-white/80 border-slate-200/80 hover:border-slate-300 text-slate-900'
                   }`}
                 >
-                  <span className="font-semibold text-sm sm:text-base leading-snug">
+                  <span className="font-semibold text-sm sm:text-base leading-snug break-keep flex-1">
                     {dish.name}
                   </span>
 
