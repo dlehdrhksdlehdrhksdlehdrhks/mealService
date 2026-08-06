@@ -1,0 +1,6 @@
+{
+  "name": "학교 급식 정보 조회",
+  "description": "NEIS 오픈 API를 활용하여 전국 학교의 날짜별 급식 식단, 알레르기 정보, 칼로리 및 영양 정보를 편리하게 조회하는 반응형 웹 서비스",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
