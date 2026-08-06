@@ -1,6 +1,6 @@
 import React from 'react';
 import { SchoolInfo } from '../types/meal';
-import { Utensils, Search, Calendar, Grid, AlertCircle, Bookmark, Sparkles } from 'lucide-react';
+import { Utensils, Search, Calendar, Grid, AlertCircle, Bookmark, Sparkles, Home } from 'lucide-react';
 
 interface HeaderProps {
   currentSchool: SchoolInfo;
@@ -25,12 +25,16 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-xs">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           {/* Logo & Main Title */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-emerald-500/20">
+            <a
+              href="https://dlehdrhksdlehdrhksdlehdrhks.github.io/AI2026/index.html"
+              className="flex items-center gap-3 group hover:opacity-95 transition-opacity"
+              title="홈으로 이동"
+            >
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
                 <Utensils className="w-5.5 h-5.5" />
               </div>
               <div>
@@ -44,10 +48,18 @@ export const Header: React.FC<HeaderProps> = ({
                   전국 초·중·고등학교 날짜별 실시간 급식 식단 정보
                 </p>
               </div>
-            </div>
+            </a>
 
-            {/* Mobile Favorite/Search Shortcut */}
-            <div className="flex items-center gap-2 md:hidden">
+            {/* Mobile Home / Favorite / Search Shortcuts */}
+            <div className="flex items-center gap-1.5 md:hidden">
+              <a
+                href="https://dlehdrhksdlehdrhksdlehdrhks.github.io/AI2026/index.html"
+                className="p-2 rounded-lg text-emerald-700 hover:bg-emerald-50 bg-emerald-50/60 transition-colors flex items-center gap-1 text-xs font-semibold"
+                title="홈으로 이동"
+              >
+                <Home className="w-4 h-4" />
+                <span>홈</span>
+              </a>
               <button
                 onClick={onOpenFavorites}
                 className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors relative"
@@ -70,6 +82,16 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* School Selector Button & Quick Actions */}
           <div className="flex flex-wrap items-center justify-between md:justify-end gap-2">
+            {/* Dedicated Home Link Button */}
+            <a
+              href="https://dlehdrhksdlehdrhksdlehdrhks.github.io/AI2026/index.html"
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-300 border border-slate-200 transition-colors shadow-xs"
+              title="홈페이지로 이동"
+            >
+              <Home className="w-4 h-4 text-emerald-600" />
+              <span className="font-semibold">홈</span>
+            </a>
+
             {/* Active School Badge */}
             <button
               onClick={onOpenSearch}
